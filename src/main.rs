@@ -1,3 +1,16 @@
+// src/main.rs
+
+// ---------- Notes ----------
+// rustc = rust compiler (pronounced "rustic")
+// cargo = rust project manager
+
+// cargo build <- compiles project with rustc
+
+
+mod basics; // module declaration (~= namespace declaration)
+
 fn main() {
     println!("Hello, Rust!");
+
+    basics::formatted_printing();
 }
