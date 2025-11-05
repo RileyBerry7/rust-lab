@@ -36,5 +36,10 @@ All parse text in the same fashion. As a plus, Rust checks formatting correctnes
 pub fn formatted_printing() {
 
     // In general, the "{}" will be replaced with any args. (casted to_str)
-    println!("{} days until christmas!!!", 51);
+    println!("{} days until christmas!!!\n", 51);
+
+    // positional args can be used by through "{index}"
+    println!("\t{0}: Hi {1}, how are you?\n \
+              \t{1}: I'm doing AMAZING!\n  \
+              \t{0}: Well, I am glad I asked. ^^\n", "Alice", "Riley");
 }

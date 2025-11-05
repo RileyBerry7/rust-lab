@@ -10,7 +10,7 @@
 mod basics; // module declaration (~= namespace declaration)
 
 fn main() {
-    println!("Hello, Rust!");
+    println!("Hello, Rust!\n");
 
     basics::formatted_printing();
 }
