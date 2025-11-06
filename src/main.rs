@@ -13,4 +13,5 @@ fn main() {
     println!("Hello, Rust!\n");
 
     basics::formatted_printing();
+    basics::primitives();
 }

@@ -75,6 +75,70 @@ pub fn formatted_printing() {
 }
 
 
-/* ------------------------------ Formatted Printing ------------------------------
-
+/* ------------------------------ debugging ------------------------------
+    types in the std library are automatically implmented into std::fmt.
+    any other types require an implmenatation to be formatted using std::fmt.
+    
+    fmt::debug   - all types are automatically implemented
+    fmt::display - non-std library types require manual implmenation
+    
+    this structure will not print with either:
+    struct unprintable(i32);
+    
+    the 'derive' attribute is what auto creates the implmenation for our struct:
+    #[derive(debug)]
+    struct debugprintable(i32); 
+    
+    all std library types are printable with '{:?}' too.
+    
 -----------------------------------------------------------------------------------------------------------------*/
+
+
+/* ------------------------------ Primitives -----------------------------
+   Rust provieds access to a wide variety of primitives.
+
+    Scalar Types:
+        - signed integers
+        - unsigned integers
+        - floating point
+        - char Unicode scalar values
+        - bool either true or false
+        - The unit type (), whose only value is an empty tuple ()
+
+    Compound Types:
+        - arrays: [1, 2, 3]
+        - tuples: (1, a)
+
+Variables can always be type annotated. Numbers may additionally be annotated via suffix or by default. Integer 
+defaults to i32 and floats to f64. Note that Rust can also infer types from context.
+-----------------------------------------------------------------------------------------------------------------*/
+pub fn primitives() {
+    // Variables can be type annotated
+    let logical: bool = true;
+    let a_float: f64  = 1.0; // regular annotation
+    let an_int        = 5i32; // suffix annotation
+
+    // Without annotations, 'default' types are used
+    let default_float = 3.0;
+    let default_int   = 7;
+
+    // A type can also be inferred from context
+    let mut inferred_type = 12;  // <- this type is set as i64 because of the next line.
+    inferred_type = 4294967296i64;
+
+    // mut makes a variable mutable; its value can change.
+    
+    // Error: variable types cant be changed.
+    let mutable_var = 25;
+    // mutable_var = true; // ERROR
+    // However: variables can be overwritten with shadowing (essentially a redeclaration)
+    let mutable_var = true;
+
+// ------------ Compound Types -------------
+    // Array signature consists of a type T and a length: [T; length]
+    let my_array: [i32; 5] = [1, 2, 3, 4, 5];
+
+    // A Tuple is an ordered list of heterogenious types: ()
+    let my_tuple = (5u32, 1u8, true, -5.34f32);
+
+}
