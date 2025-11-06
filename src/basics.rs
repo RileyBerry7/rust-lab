@@ -1,5 +1,9 @@
 // basics.rc
 
+int main(){
+    int x;
+}
+
 /* ------------------------------ Types of Comments ------------------------------
 
 // Line Comment
@@ -140,5 +144,10 @@ pub fn primitives() {
 
     // A Tuple is an ordered list of heterogenious types: ()
     let my_tuple = (5u32, 1u8, true, -5.34f32);
+
+    println!("{} {} {}", logical, a_float, an_int);
+    
+    let _unused = 10;
+    int x;
 
 }
